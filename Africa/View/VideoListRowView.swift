@@ -41,6 +41,12 @@ struct VideoListRowView: View {
                     .lineLimit(2)
             }
         }
+        
+        .contextMenu {
+            Button("Share") {print(video)}
+//             Divider()
+             Button("Delete") {}
+        }
     }
 }
 
@@ -50,7 +56,8 @@ struct VideoListRowView_Previews: PreviewProvider {
     static var videos: [Video] = Bundle.main.decode("videos.json")
     
     static var previews: some View {
-        VideoListRowView(video: videos[1])
+        VideoListRowView(video: videos[4])
+            .preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)
             .padding()
     }
